@@ -13,6 +13,7 @@
 /** @var \Laravel\Lumen\Routing\Router $router */
 $router->group(['namespace' => 'MMS', 'prefix' => 'mms'], function () use ($router) {
     $router->get('test', 'Index@userList');//测试用户列表
+
     $router->get('tests', 'Index@feedBack');//测试用户列表
     $router->post('auth', 'Common@auth');
     $router->post('authpass', 'Common@authpass');
@@ -34,31 +35,31 @@ $router->group(['namespace' => 'MMS', 'prefix' => 'mms'], function () use ($rout
             $router->get('ocr', 'Merchant@ocrLicense');
             $router->get('status', 'Merchant@getSignInStatus');
             $router->get('info', 'Merchant@getMerchantInfo');
-            
+
             $router->get('store/info', 'Store@getStoreInfo');
             $router->post('store/info', 'Store@updateStoreInfo');
-            
+
             $router->get('goods/spec', 'Goods@getGoodsSpecList');
             $router->get('goods/spec/{id}', 'Goods@getGoodsSpecInfo');
             $router->post('goods/spec', 'Goods@addGoodsSpec');
-            
+
             $router->post('goods', 'Goods@createGoods');
             $router->put('goods', 'Goods@updateGoods');
             $router->delete('goods', 'Goods@deleteGoods');
             $router->post('goods/list', 'Goods@getGoodsList');
             $router->get('goods/info', 'Goods@getGoodsInfo');
-            
+
             $router->post('orders', 'Order@list');
             $router->get('order', 'Order@info');
             $router->put('order/dispatch', 'Order@dispatchGoods');
-            
+
             $router->get('article', 'Article@info');
             $router->put('article', 'Article@update');
             $router->post('articles', 'Article@list');
             $router->post('article', 'Article@create');
             $router->put('articles', 'Article@batchChangeStatus');
             $router->delete('articles', 'Article@batchDelete');
-            
+
             // transaction
             $router->get('transaction', 'Transaction@list');
             $router->post('transaction/withdraw', 'Transaction@withDraw');
@@ -94,21 +95,21 @@ $router->group(['namespace' => 'MMS', 'prefix' => 'mms'], function () use ($rout
             $router->post('merchant/audit', 'Merchant@auditWithdraw');
             $router->get('user/withdraw', 'User@getWithdrawList');
             $router->post('user/audit', 'User@auditWithdraw');
-            
+
             $router->post('goods', 'Goods@getList');
             $router->delete('goods', 'Goods@deleteGoods');
             $router->get('goods/info', 'Goods@getGoodsInfo');
             $router->get('goods/spec', 'Goods@getGoodsSpecList');
             $router->get('goods/spec/{id}', 'Goods@getGoodsSpecInfo');
-            
+
             $router->get('article', 'Article@info');
-            
+
             $router->post('articles', 'Article@list');
             $router->post('article', 'Article@create');
             $router->put('article', 'Article@update');
             $router->put('articles', 'Article@batchChangeStatus');
             $router->delete('articles', 'Article@batchDelete');
-            
+
             $router->post('videos', 'Video@list');
             $router->post('video', 'Video@create');
             $router->get('mallhome', 'MallHome@list');
