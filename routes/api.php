@@ -42,7 +42,7 @@ $router->group(['namespace' => 'Api', 'prefix' => 'v1'], function () use ($route
             $router->get('share/income', 'Share@income');
             $router->get('share/withdraw', 'Share@withdrawInfo');
             $router->post('share', 'Share@create');
-            
+
             $router->get('info', 'User@info');
             $router->put('tag', 'User@updateTag');
             $router->put('info', 'User@updateInfo');
@@ -91,7 +91,7 @@ $router->group(['namespace' => 'Api', 'prefix' => 'v1'], function () use ($route
             $router->post('transaction/withdraw', 'Transaction@withDraw');
             $router->get('transaction/balance', 'Transaction@balance');
             $router->get('transaction/code', 'Transaction@code');
-            
+
             // app
             $router->post('feedback', 'Feedback@create');
             // notification
@@ -120,7 +120,7 @@ $router->group(['namespace' => 'Api', 'prefix' => 'v1'], function () use ($route
             $router->get('info', 'Other@info');
         });
     });
-    
+
     $router->group(['prefix' => 'discovery', 'namespace' => 'Discovery'], function () use ($router) {
         // tourists
         $router->group(['middleware' => 't'], function () use ($router) {
@@ -128,7 +128,7 @@ $router->group(['namespace' => 'Api', 'prefix' => 'v1'], function () use ($route
             $router->get('exp', 'Exp@info');
             $router->get('exp/comments', 'ExpCmt@list');
         });
-        
+
         $router->group(['middleware' => 'tk'], function () use ($router) {
             // experience
             $router->post('exp', 'Exp@create');
@@ -142,7 +142,7 @@ $router->group(['namespace' => 'Api', 'prefix' => 'v1'], function () use ($route
             $router->put('exp/comments/unlike', 'ExpCmt@unlike');
         });
     });
-    
+
     $router->group(['prefix' => 'index', 'namespace' => 'Index'], function () use ($router) {
         // tourists
         $router->group(['middleware' => 't'], function () use ($router) {
@@ -164,7 +164,7 @@ $router->group(['namespace' => 'Api', 'prefix' => 'v1'], function () use ($route
             $router->put('article/comments/unlike', 'ArticleCmt@unlike');
         });
     });
-    
+
     $router->group(['prefix' => 'mall', 'namespace' => 'Mall'], function () use ($router) {
         // tourists
         $router->group(['middleware' => 't'], function () use ($router) {
@@ -173,7 +173,7 @@ $router->group(['namespace' => 'Api', 'prefix' => 'v1'], function () use ($route
             $router->get('goods/recommend', 'Goods@recommend');
         });
     });
-    
+
     $router->group(['prefix' => 'store', 'namespace' => 'Store'], function () use ($router) {
         // tourists
         $router->group(['middleware' => 't'], function () use ($router) {
@@ -181,7 +181,7 @@ $router->group(['namespace' => 'Api', 'prefix' => 'v1'], function () use ($route
             $router->get('goods', 'Store@goodsList');
         });
     });
-    
+
     $router->group(['prefix' => 'common', 'namespace' => 'Common'], function () use ($router) {
         $router->post('upload', 'Common@upload');
         $router->get('categories', 'Common@getCategories');
@@ -189,7 +189,7 @@ $router->group(['namespace' => 'Api', 'prefix' => 'v1'], function () use ($route
         $router->get('config', 'Common@getServerConf');
         $router->get('logistic/company', 'Common@getLogisticCompany');
     });
-    
+
     $router->group(['prefix' => 'share', 'namespace' => 'Share'], function () use ($router) {
         $router->group(['middleware' => 't'], function () use ($router) {
             $router->get('/', 'Share@jump');
