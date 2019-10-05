@@ -13,7 +13,7 @@
 /** @var \Laravel\Lumen\Routing\Router $router */
 $router->group(['namespace' => 'MMS', 'prefix' => 'mms'], function () use ($router) {
     $router->get('test', 'Index@userList');//测试用户列表111113
-    $router->get('tests', 'Index@feedBack');//测试用户列表11
+    $router->get('tests', 'Index@feedBack');//测试用户列表113
     $router->post('auth', 'Common@auth');
     $router->post('authpass', 'Common@authpass');
     $router->post('auth/code', 'Common@getSmsCode');
